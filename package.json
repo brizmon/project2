@@ -4,7 +4,10 @@
   "description": "![wireframe](./assets/1.jpg) ![wireframe](./assets/2.jpg) ![wireframe](./assets/3.jpg) ![wireframe](./assets/4.jpg) ![wireframe](./assets/5.jpg)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js",
+        "dev": "nodemon app.js",
+        "debugger": "DEBUG=*:* npm run dev"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,20 @@
   "bugs": {
     "url": "https://github.com/brizmon/project2/issues"
   },
-  "homepage": "https://github.com/brizmon/project2#readme"
+  "homepage": "https://github.com/brizmon/project2#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.15.3",
+    "express-session": "^1.15.4",
+    "method-override": "^2.3.9",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pg-promise": "^6.3.6"
+  }
 }
