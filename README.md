@@ -1,9 +1,9 @@
 # DESIGNER ASSISTANT APP
-![wireframe](1.jpg)
-![wireframe](2.jpg)
-![wireframe](3.jpg)
-![wireframe](4.jpg)
-![wireframe](5.jpg)
+![wireframe](./1.jpg)
+![wireframe](./2.jpg)
+![wireframe](./3.jpg)
+![wireframe](./4.jpg)
+![wireframe](./5.jpg)
 
 ## What is the Designer Assistant app?
 It is an app that lets you browse fonts, hex colors, and visuals from designers for you to save in boards. Boards are the easiest way to collect your thoughts and inspiration in one place. 
