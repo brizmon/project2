@@ -27,6 +27,9 @@ app.listen(process.env.PORT || 3003, function () {
   console.log('Example app listening on port ' + (process.env.PORT || 3003));
 });
 
+const fontRoutes = require('./routes/font-routes');
+app.use('/font', fontRoutes);
+
 // Our index route
 app.get('/', (req, res) => {
     res.send('Holaaa Mundo!!')
