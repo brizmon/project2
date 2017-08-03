@@ -3,15 +3,29 @@ const express = require('express');
 const logger = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
-const dribbbleApi = require('dribbble-api')
+const dribbbleApi = require('dribbble-api');
+const methodOverride = require('method-override');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const passport = require('passport');
 
 // initialize the app
 const app = express();
+require('dotenv').config();
 
 //middlewares
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
+app.use(cookieParser());
+app.use(session({
+  secret: process.env.SECRET_KEY,
+  resave: false,
+  saveUninitialized: true,
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // static files
 app.use(express.static('public'));
@@ -21,16 +35,44 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // set the port, either from an environmental variable or manually
-const port = process.env.PORT || 3003;
+const port = process.env.PORT || 3004;
 // tell the app to listen on that particular port
-app.listen(process.env.PORT || 3003, function () {
-  console.log('Example app listening on port ' + (process.env.PORT || 3003));
+app.listen(process.env.PORT || 3004, function () {
+  console.log('Example app listening on port ' + (process.env.PORT || 3004));
 });
 
-const fontRoutes = require('./routes/font-routes');
-app.use('/font', fontRoutes);
 
 // Our index route
 app.get('/', (req, res) => {
     res.send('Holaaa Mundo!!')
+});
+
+const fontRoutes = require('./routes/font-routes');
+app.use('/font', fontRoutes);
+const behanceRoutes = require('./routes/behance-routes');
+app.use('/visuals', behanceRoutes);
+const authRoutes = require('./routes/auth-routes');
+app.use('/auth', authRoutes);
+const userRoutes = require('./routes/user-routes');
+app.use('/user', userRoutes);
+
+const Behance = require('behance-api');
+const Be = new Behance(process.env.BEHANCE_KEY);
+ 
+// Get Projects Data 
+Be.projects({q: 'motorcycle'}, function (err, res, data) {
+  if (err) throw err;
+ 
+  // Do something with the data received from the API 
+  //console.dir(data);
+ // console.log (data);
+
+});
+
+
+
+app.use('*', (req, res) => {
+  res.status(400).json({
+    message: 'Not found!',
+  });
 });

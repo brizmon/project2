@@ -21,6 +21,17 @@ CREATE TABLE IF NOT EXISTS googleFonts
 );
 
 
+CREATE TABLE IF NOT EXISTS behance
+(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  url TEXT,
+  fields VARCHAR(255),
+  colors TEXT,
+  user_id INTEGER REFERENCES users(id)
+);
+
+
 
 
 

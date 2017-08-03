@@ -1,4 +1,9 @@
 <% include ../partials/boilerplate %>
-<p>Family: <%= font.family %></p>
-<p>Category: <%= font.category %></p>
+  <div >
+    <% for (let f of font) { %>
+      <div >
+        <h1><%= f.family %></h1>
+      </div>
+    <% } %>
+  </div>
 <% include ../partials/end %>
