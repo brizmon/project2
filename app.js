@@ -35,39 +35,28 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // set the port, either from an environmental variable or manually
-const port = process.env.PORT || 3004;
+const port = process.env.PORT || 3005;
 // tell the app to listen on that particular port
-app.listen(process.env.PORT || 3004, function () {
-  console.log('Example app listening on port ' + (process.env.PORT || 3004));
+app.listen(process.env.PORT || 3005, function () {
+  console.log('Example app listening on port ' + (process.env.PORT || 3005));
 });
 
 
 // Our index route
 app.get('/', (req, res) => {
-    res.send('Holaaa Mundo!!')
+    res.render('index', {
+        message: 'Find Fonts!',
+        currentPage: 'home',
+    });
 });
 
 const fontRoutes = require('./routes/font-routes');
 app.use('/font', fontRoutes);
-const behanceRoutes = require('./routes/behance-routes');
-app.use('/visuals', behanceRoutes);
+
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
 const userRoutes = require('./routes/user-routes');
 app.use('/user', userRoutes);
-
-const Behance = require('behance-api');
-const Be = new Behance(process.env.BEHANCE_KEY);
- 
-// Get Projects Data 
-Be.projects({q: 'motorcycle'}, function (err, res, data) {
-  if (err) throw err;
- 
-  // Do something with the data received from the API 
-  //console.dir(data);
- // console.log (data);
-
-});
 
 
 

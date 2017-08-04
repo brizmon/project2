@@ -1,9 +1,21 @@
 <% include ../partials/boilerplate %>
-  <div >
+  <div class="container">
     <% for (let f of font) { %>
-      <div >
+      <div class="individual-font">
         <h1><%= f.family %></h1>
+          <a>
+            <button onclick='sendToDB(font)' )>Add</button>
+          </a>
       </div>
     <% } %>
   </div>
-<% include ../partials/end %>
+
+
+<script src='/src/jquery.js'></script> 
+ <script src='/src/main.js'></script> 
+ 
+   
+
+</body>
+
+</html>
