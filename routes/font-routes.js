@@ -4,13 +4,18 @@ const authHelpers = require('../services/auth/auth-helpers');
 const fontHelper = require('../services/googleFonts/googleFonts-helper');
 const fontController = require('../controllers/font-controllers');
 
+
+
+fontRouter.post('/font', authHelpers.loginRequired, fontController.create);
+
 fontRouter.get('/', fontHelper.getFont, fontController.index);
-fontRouter.post('/', authHelpers.loginRedirect, fontController.save);
+//fontRouter.post('/', authHelpers.loginRedirect, fontController.save);
+
+
+
 
 fontRouter.get('/add', authHelpers.loginRequired, (req, res) => {
-    res.render('fonts/font-add', {
-        currentPage: 'add',
-    });
+    res.render( 'auth/login');
 });
 
 fontRouter.get('/:id', fontController.show);

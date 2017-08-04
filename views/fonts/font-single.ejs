@@ -1,0 +1,17 @@
+
+
+
+<ul>
+    <li>Family: <%= f.family %></li>
+    <li>Category: <%= f.category %></li>
+    <li>Variants: <%= f.variants %></li>
+    <li>Files: <%= f.regular %></li>
+</ul>
+
+<form method='POST' action="/font/<%= data.id %>?_method=PUT">
+    <input name='family' type='text' value='<%= f.family %>' />
+        <input name='category' type='text' value='<%= f.category %>' />
+        <input name='variant' type='text' value='<%= f.variants %>' />
+        <input name='regular' type='text' value='<%= f.regular %>' />
+        <button type="submit" value="update it!">Update Font!</button>
+</form>

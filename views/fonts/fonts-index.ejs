@@ -1,15 +1,24 @@
 <% include ../partials/boilerplate %>
+
+
+
   <div class="container">
     <% for (let f of font) { %>
       <div class="individual-font">
         <h1><%= f.family %></h1>
-          <a>
-            <button onclick='sendToDB(font)' )>Add</button>
-          </a>
+
+        <!-- <a href="/font"> see add</a> -->
+        <form method="POST" action="/font">
+            <input name='family' type='text' value='<%= f.family %>' />
+            <input name='category' type='text' value='<%= f.category %>' />
+            <input name='variant' type='text' value='<%= f.variants %>' />
+            <input name='regular' type='text' value='<%= f.files.regular %>' />
+            <!-- <button type="submit" value="Add it!">Add Note</button> -->
+            <li><a href='/notes/add'>Add Note!</a></li>
+        </form>
       </div>
     <% } %>
   </div>
-
 
 <script src='/src/jquery.js'></script> 
  <script src='/src/main.js'></script> 

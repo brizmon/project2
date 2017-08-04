@@ -7,9 +7,9 @@ googleFonts.findAll = () =>
 
 googleFonts.findById = id =>
   db.one('SELECT * FROM googleFonts WHERE id = $1',[id])
+/*
+googleFonts.create = font => db.one(
 
-googleFonts.save = font => db.one(
-  `
   INSERT INTO googleFonts (
   family,
   category,
@@ -21,9 +21,25 @@ googleFonts.save = font => db.one(
   $/variants/,
   $/regular/
   )RETURNING *`,
-  [font.family, "a", "b","c" ] 
-)
-  
+  [font] 
+)*/
+
+googleFonts.create = (font) => {
+    return db.one(`
+    INSERT INTO googleFonts
+    (family,
+    category,
+    variants,
+    regular)
+    VALUES ($1, $2, $3, $4)
+    RETURNING *
+    `, 
+  ['font.family', 'font.category', 'font.variant', 'font.regular']
+  //[res.locals.family,res.locals.category,res.locals.variant,res.locals.regular]
+  );
+}
+
+
 
 googleFonts.destroy = (id) => {
     return db.none(`

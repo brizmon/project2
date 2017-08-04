@@ -31,19 +31,34 @@ fontController.show = (req, res) => {
         });
 };
 
-fontController.save = (req, res) => {
-    Font.save({
+fontController.create = (req, res) => {
+    console.log ("save    save"); 
+    Font.create({
         title: req.body.title,
         category: req.body.category,
         variants: req.body.variants,
         regular: req.body.regular,
-    }, req.user.id).then(() => {
-        res.redirect('/fonts');
+    }).then(() => {
+        res.redirect('/font');
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
 };
+
+fontController.update = (req,res)=>{
+  console.log(req.body)
+  Font.update({
+    title: req.body.title,
+    category: req.body.category,
+    variants: req.body.variants,
+    regular: req.body.regular,
+  }).then( font =>{
+    res.render('fonts/fonts-single',{
+      data: font
+    })
+  })
+}
 
 fontController.delete = (req, res) => {
     Font.destroy(req.params.id)
