@@ -18,6 +18,8 @@ fontRouter.get('/add', authHelpers.loginRequired, (req, res) => {
     res.render( 'auth/login');
 });
 
+fontRouter.post('/fonts/fonts-add', fontController); 
+
 fontRouter.get('/:id', fontController.show);
 fontRouter.delete('/:id', authHelpers.loginRequired, fontController.delete);
 

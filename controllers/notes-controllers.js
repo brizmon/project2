@@ -12,7 +12,7 @@ notesController.index = (req, res) => {
         }).catch(err => {
             console.log(err);
             res.status(500).json(err);
-        })
+        });
 };
 
 notesController.show = (req, res) => {
@@ -56,7 +56,7 @@ notesController.update = (req, res) => {
 
 notesController.edit = (req, res) => {
     Notes.findById(req.params.id)
-        .then(todo => {
+        .then(font => {
             res.render('notes/note-single-edit', {
                 currentPage: 'edit',
                 data: note,

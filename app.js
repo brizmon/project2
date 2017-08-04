@@ -50,9 +50,10 @@ app.get('/', (req, res) => {
     });
 });
 
+const noteRoutes = require('./routes/notes-routes');
+app.use('/notes', noteRoutes);
 const fontRoutes = require('./routes/font-routes');
 app.use('/font', fontRoutes);
-
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
 const userRoutes = require('./routes/user-routes');

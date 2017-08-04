@@ -5,22 +5,58 @@
   <div class="container">
     <% for (let f of font) { %>
       <div class="individual-font">
-        <h1><%= f.family %></h1>
+        <p id= "family" ><%= f.family %></p>
+        <p id= "category'"> <%= f.category' %></p>
+        <p id= "variant"> <%= f.variant %>' </p>
+        <p id= "regular"> '<%= f.regular %>' </p>
 
         <!-- <a href="/font"> see add</a> -->
-        <form method="POST" action="/font">
+        <!-- <form method="POST" action="/font">
             <input name='family' type='text' value='<%= f.family %>' />
             <input name='category' type='text' value='<%= f.category %>' />
             <input name='variant' type='text' value='<%= f.variants %>' />
             <input name='regular' type='text' value='<%= f.files.regular %>' />
-            <!-- <button type="submit" value="Add it!">Add Note</button> -->
-            <li><a href='/notes/add'>Add Note!</a></li>
-        </form>
+            <li><a href='/notes/add'>Add Note!</a></li> -->
+            <button type="submit" value="save">Save Font!</button> 
+        <!-- </form> -->
       </div>
     <% } %>
   </div>
 
-<script src='/src/jquery.js'></script> 
+
+
+  <script>
+
+
+     $('button').on('click', function () {
+  
+    let dataGoingToDB={};
+
+    dataGoingToDB.family=$('#family').text();
+    dataGoingToDB.category=$('#category').text();
+    dataGoingToDB.variant=$('#variant').text();
+    dataGoingToDB.regular=$('#regular').text();
+
+    // function saveToDB(){
+        $.ajax({
+        type: "POST",
+        url: "/fonts/fonts-add",
+        data: dataGoingToDB,
+        success:   function(){
+        alert("font has been saved");
+        },
+        //  dataType: dataType
+      });
+      
+     });
+    
+  </script>
+
+
+
+
+
+ <script src='/src/jquery.js'></script> 
  <script src='/src/main.js'></script> 
  
    

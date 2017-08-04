@@ -21,7 +21,7 @@ Note.create = (note, userid) => {
     `, [note.title, note.category, note.description, userid]);
 }
 
-Note.update = (todo, id) => {
+Note.update = (font, id) => {
     return db.one(`
     UPDATE fontNotes SET
     title = $1,
