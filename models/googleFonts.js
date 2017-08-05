@@ -34,8 +34,7 @@ googleFonts.create = (font) => {
     VALUES ($1, $2, $3, $4)
     RETURNING *
     `, 
-  ['font.family', 'font.category', 'font.variant', 'font.regular']
-  //[res.locals.family,res.locals.category,res.locals.variant,res.locals.regular]
+  [font.family, font.category, font.variants, font.files]
   );
 }
 

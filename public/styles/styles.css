@@ -46,7 +46,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
 
 /* GENERAL */
 .home-container {
@@ -95,4 +100,5 @@ table {
     box-sizing: border-box;
     height: 300px;
     margin: 1.66%;
+    overflow: hidden;
 }

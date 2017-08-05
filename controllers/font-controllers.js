@@ -34,10 +34,10 @@ fontController.show = (req, res) => {
 fontController.create = (req, res) => {
     console.log ("save    save"); 
     Font.create({
-        title: req.body.title,
+        family: req.body.family,
         category: req.body.category,
         variants: req.body.variants,
-        regular: req.body.regular,
+        files: req.body.files,
     }).then(() => {
         res.redirect('/font');
     }).catch(err => {
@@ -49,10 +49,10 @@ fontController.create = (req, res) => {
 fontController.update = (req,res)=>{
   console.log(req.body)
   Font.update({
-    title: req.body.title,
+    family: req.body.family,
     category: req.body.category,
     variants: req.body.variants,
-    regular: req.body.regular,
+    files: req.body.files,
   }).then( font =>{
     res.render('fonts/fonts-single',{
       data: font
