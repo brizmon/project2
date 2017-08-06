@@ -3,7 +3,11 @@ const noteRoutes = express.Router();
 const authHelpers = require('../services/auth/auth-helpers');
 const notesController = require('../controllers/notes-controllers');
 
-noteRoutes.get('/', notesController.index);
+noteRoutes.get('/',function(){
+    console.log ("login");
+}, notesController.index);
+
+
 noteRoutes.post('/', authHelpers.loginRequired, notesController.create);
 
 noteRoutes.get('/add', authHelpers.loginRequired, (req, res) => {
