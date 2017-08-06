@@ -56,7 +56,7 @@ notesController.update = (req, res) => {
 
 notesController.edit = (req, res) => {
     Notes.findById(req.params.id)
-        .then(font => {
+        .then(note => {
             res.render('notes/note-single-edit', {
                 currentPage: 'edit',
                 data: note,
