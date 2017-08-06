@@ -7,7 +7,8 @@ usersController.index = (req, res) => {
   console.log('userController');
   User.findUserTodos(req.user.id)
     .then(todos => {
-        res.redirect('/notes');
+//        res.redirect('/user');
+res.redirect('/notes');
     }).catch(err => {
       console.log(err);
       res.status(500).json({err: err});

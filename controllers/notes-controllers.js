@@ -68,6 +68,7 @@ notesController.edit = (req, res) => {
 };
 
 notesController.delete = (req, res) => {
+    console.log ("delete functions"); 
     Notes.destroy(req.params.id)
         .then(() => {
             res.redirect('/notes');
