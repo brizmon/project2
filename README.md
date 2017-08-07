@@ -1,4 +1,4 @@
-# DESIGNER ASSISTANT APP
+# FONTS APP
 ![wireframe](./assets/1.png)
 ![wireframe](./assets/2.png)
 ![wireframe](./assets/3.png)
