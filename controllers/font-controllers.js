@@ -63,11 +63,25 @@ fontController.update = (req,res)=>{
 fontController.delete = (req, res) => {
     Font.destroy(req.params.id)
         .then(() => {
-            res.redirect('/fonts');
+            res.redirect('/font');
         }).catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 };
+
+fontController.savedFonts = (req, res) => {
+    console.log ("we are in the controller&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+    Font.findAll(1)
+        .then(fonts => {
+            console.log(fonts);
+            res.render('fonts/font-single',{
+                data: fonts,
+            });
+        }).catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+}
 
 module.exports = fontController;

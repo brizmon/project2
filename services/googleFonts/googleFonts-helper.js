@@ -6,7 +6,7 @@ function getFont(req, res, next) {
     .then(fetchRes => fetchRes.json())
     .then(jsonRes => {
       let fontArray=jsonRes.items;
-
+       console.log (fontArray); 
       //   for (let font of fontArray){
       //   console.log (font.family); 
       //   }

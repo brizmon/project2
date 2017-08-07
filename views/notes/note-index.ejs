@@ -1,23 +1,25 @@
 <% include ../partials/boilerplate %>
-
-<div class='hero'>
-  <h1>Your notes</h1>
-</div>
-
-  <div class='note-container'>
-    <% for (let note of data) { %>
-      <div class='note'>
-        <h1><%= note.title %></h1>
-        <h2><span><%= note.category %></span></h2>
-        <h3><%= note.description %></h3>
-        <div class='links'>
-          <a class='linkto' href='/notes/<%= note.id%>'>View Note</a>
-          <form method='POST' action='/notes/<%= note.id %>?_method=DELETE'>
-            <input type='submit' value='Delete it!' />
-          </form>
-        </div>
+<% include ../partials/nav %>
+  <div class="main">
+      <div class='hero'>
+        <h1>Your notes</h1>
       </div>
-    <% } %>
+
+      <div class='container notes'>
+        <% for (let note of data) { %>
+          <div class='individual-font'>
+            <h1><%= note.title %></h1>
+            <h2><span><%= note.category %></span></h2>
+            <h3><%= note.description %></h3>
+            <div class='links'>
+              <a class='linkto' href='/notes/<%= note.id%>'>View Note</a>
+              <form method='POST' action='/notes/<%= note.id %>?_method=DELETE'>
+                <input class="button-f" type='submit' value='Delete it!' />
+              </form>
+            </div>
+          </div>
+        <% } %>
+      </div>
   </div>
 
 <% include ../partials/end %>

@@ -1,17 +1,26 @@
+<% include ../partials/boilerplate %>
+<% include ../partials/nav %>
 
+<div class="main">
+      <div class='hero'>
+        <h1>Your fonts</h1>
+      </div>
+<div class="container fonts">
+    <% data.forEach(data => { %>
+        <div class="individual-font">
+            <p id= "family"><%= data.family %></p>
+            <p id= "category"><%=  data.category %></p>
+            <p id= "variants"><%= data.variants %></p>
+            <div class="download-btn">
+                <a id= "files" href=" <%= data.regular.files %> "><span id="download-font"><%= data.regular%></span><a/>
+            </div>
+            <div class='links'>
+                <form method='POST' action='/font/<%= data.id %>?_method=DELETE'>
+                    <input class="button-f" type="submit" value="Delete Font"/>
+                </form>
+            </div>
+        </div>
+<% }) %>
+</div>
+</div>
 
-
-<ul>
-    <li>Family: <%= f.family %></li>
-    <li>Category: <%= f.category %></li>
-    <li>Variants: <%= f.variants %></li>
-    <li>Files: <%= f.regular %></li>
-</ul>
-
-<form method='POST' action="/font/<%= data.id %>?_method=PUT">
-    <input name='family' type='text' value='<%= f.family %>' />
-        <input name='category' type='text' value='<%= f.category %>' />
-        <input name='variant' type='text' value='<%= f.variants %>' />
-        <input name='regular' type='text' value='<%= f.regular %>' />
-        <button type="submit" value="update it!">Update Font!</button>
-</form>

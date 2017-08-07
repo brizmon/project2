@@ -1,5 +1,5 @@
 <% include ../partials/boilerplate %>
-  
+<% include ../partials/nav %>
 
   <div class="container">
     <% for (let f of font) { %>
@@ -8,11 +8,17 @@
         <p id= "family" ><%= f.family %></p>
         <p id= "category"> <%= f.category %></p>
         <p id= "variants"> <%= f.variants %> </p>
-        <div>
-          <a id= "files" href=" <%= f.files.regular %> "><p id="download-font"> Download <%= f.family %>!</p><a/>
+        <div class="download-btn">
+          <a id= "files" href=" <%= f.files.regular %> "><span id="download-font"> Download <%= f.family %></span><a/>
         </div>
-        <button type="submit" value="save">Save Font!</button> 
-      
+        <div class="font-btns">
+          <div class="save-button">
+            <button type="submit" value="save">Save Font!</button>
+          </div>
+          <div class="add-note">
+            <p><a href='/notes/add'>Add a note</a></p>
+          </div>
+        </div>
       </div>
     <% } %>
   </div>
@@ -25,20 +31,26 @@
 
      $('button').on('click', function () {
    
-    let dataGoingToDB={};
+    let dataGoingToDB={}; //empty object
 
+
+      //below populating the object wih font data
     dataGoingToDB.family=$('#family').text();
     dataGoingToDB.category=$('#category').text();
     dataGoingToDB.variants=$('#variants').text();
     dataGoingToDB.files=$('#files').text();
-    alert(dataGoingToDB.family);
     // function saveToDB(){
+
+
+    //below sending object with data to backend 
+    //using Ajax to send a post request
+    //ajax is a jquery method that lets you transfer data through the http 
         $.ajax({
-        type: "POST",
-        url: "/font/terminal",
+        method: "POST",
+        url: "/font/terminal", // whih route we are trying to call
         data: dataGoingToDB,
-        success:   function(){
-        alert("font has been saved");
+        success: function (){
+          window.location = '/font/savedFonts'
         },
 
         //  dataType: dataType

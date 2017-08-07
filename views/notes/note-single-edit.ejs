@@ -1,10 +1,11 @@
 <% include ../partials/boilerplate %>
+<% include ../partials/nav %>
 
-<form method='POST' action='/notes/<%= data.id %>?_method=PUT'>
+<form class="note-add" method='POST' action='/notes/<%= data.id %>?_method=PUT'>
   <input name='title' type='text' value='<%= data.title %>' />
   <input name='category' type='text' value='<%= data.category %>' />
   <input name='description' type='text' value='<%= data.description %>' />
-  <input type='submit' value='Edit it!' />
+  <input class="button-a" type='submit' value='Edit it!' />
 </form>
  
 <% include ../partials/end %>

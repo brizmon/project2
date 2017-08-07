@@ -46,7 +46,6 @@ app.listen(process.env.PORT || 3007, function () {
 // Our index route
 app.get('/', (req, res) => {
     res.render('index', {
-        message: 'Find Fonts!',
         currentPage: 'home',
     });
 });

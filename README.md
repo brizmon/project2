@@ -1,9 +1,8 @@
 # DESIGNER ASSISTANT APP
-![wireframe](./assets/1.jpg)
-![wireframe](./assets/2.jpg)
-![wireframe](./assets/3.jpg)
-![wireframe](./assets/4.jpg)
-![wireframe](./assets/5.jpg)
+![wireframe](./assets/1.png)
+![wireframe](./assets/2.png)
+![wireframe](./assets/3.png)
+![wireframe](./assets/4.png)
 
 
 ## What is the Designer Assistant app?

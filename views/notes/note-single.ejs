@@ -1,24 +1,22 @@
 <% include ../partials/boilerplate %>
-
-<div class='hero'>
-</div>
+<% include ../partials/nav %>
 
 
-  <div class='note-container'>
-    <div class='note'>
+  <div class='container notes'>
+    <div class='individual-font'>
       <h1><%= data.title %></h1>
       <h2><span><%= data.category %></span></h2>
       <h3><%= data.description %></h3>
       <div class='links'>
         <a href='/notes/<%= data.id %>/edit'>Edit it!</a>
         <form method='POST' action='/notes/<%= data.id %>?_method=DELETE'>
-          <input type='submit' value='Delete it!' />
+          <input class="button-f" type='submit' value='Delete it!' />
         </form>
       </div>
       </div>
-      <div class='linkback'>
+    </div>
+    <div class='linkback'>
         <a class='seeall' href='/notes/'>See my notes</a>
-      </div>
     </div>
     
 <% include ../partials/end %>

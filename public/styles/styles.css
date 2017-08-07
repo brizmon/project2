@@ -54,21 +54,41 @@ table {
 }
 
 /* GENERAL */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+nav {
+    height: 80px;
+    position: fixed;
+    background: #9437ff;
+    width: 100%;
+    z-index: 9;
+}
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+.navigation a {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Poppins', sans-serif;
+}
+.navigation a:hover {
+    color: #2a2a2a;
+}
 .home-container {
-    background: cyan;
     height: 100vh;
 }
-.home-container h1 {
-    font-size: 120px;
-    text-align: center;
-    position: relative;
-    top: 30%;
-}
 .welcome-page {
-    background: azure;
     position: relative;
-    top: 35%;
-    width: 40%;
+    top: 25%;
+    width: 45%;
     margin: 0 auto;
 }
 .welcome-page ul {
@@ -76,23 +96,72 @@ table {
     justify-content: space-around;
 }
 .welcome-page ul li {
-    background: pink;
-    padding: 40px;
+    padding: 25px;
+    width: 300px;
+    background: #DADFE1;
+    border-radius: 100px;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 .welcome-page ul li a {
-    background: blueviolet;
-    padding: 40px;
-    border-radius: 20px;
+    padding: 23px;
+    text-decoration: none;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #FFF;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+}
+.welcome-page ul li a:hover {
+    color: #2a2a2a;
+}
+.fonts-headline {
+    width: 55%;
+    /* background: pink; */
+    margin: 0 auto;
+    position: relative;
+    top: 150px;
+}
+.fonts-headline span {
+    font-size: 250px;
+    text-align: center;
+}
+.fonts-headline span:nth-child(1){
+    font-family: 'Monoton', cursive;
+    color: #9437ff;
+}
+.fonts-headline span:nth-child(2){
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Anton', sans-serif; */
+    color: #19B5FE;
+}
+.fonts-headline span:nth-child(3){
+    font-family: 'Sedgwick Ave Display', cursive;
+    color: #F7CA18;
+}
+.fonts-headline span:nth-child(4){
+     /* font-family: 'Poppins', sans-serif;  */
+    font-family: 'Nunito', sans-serif; 
+     /* font-family: 'Abril Fatface', cursive;  */
+    color: #DB0A5B;
+}
+.fonts-headline span:nth-child(5){
+    font-family: 'Shrikhand', cursive;
+    color: #2ECC71;
 }
 
-
-
-
 .container {
-     background: #ECF0F1;
+    background: #ECF0F1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    position: relative;
+    top: 75px;
+}
+.notes, .fonts {
+    height: 100vh !important;
 }
 .individual-font {
     background: #FFF;
@@ -101,4 +170,201 @@ table {
     height: 300px;
     margin: 1.66%;
     overflow: hidden;
+    text-align: center;
+}
+.individual-font p {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    padding-bottom: 5px;
+}
+.individual-font h1 {
+    padding-top: 30px;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding-bottom: 8px;
+}
+.individual-font h2 {
+    padding-bottom: 10px;
+}
+.individual-font span {
+    background: #F7CA18;
+}
+#family {
+    font-size: 30px;
+    padding-top: 25px;
+    font-family: 'Rubik', sans-serif;
+}
+.download-btn {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.download-btn a {
+    text-decoration: none;
+    color: #fff;
+}
+.download-btn span {
+    background: #dcdcde;
+    padding: 10px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+}
+.download-btn span:hover {
+    background: #9437ff;
+}
+.font-btns {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    position: relative;
+    top: 70px;
+}
+.save-button button {
+    border: none;
+    background: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+.save-button button:hover {
+    color: #2ECC71;
+}
+.add-note p {
+    font-size: 20px;
+}
+.add-note p a {
+    color: #2a2a2a;
+    letter-spacing: 0;
+}
+.add-note p a:hover {
+    color: #DB0A5B;
+}
+.hero h1 {
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+.main {
+    position: relative;
+    top: 130px;
+}
+.note-add {
+    position: relative;
+    top: 150px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+.login-container {
+    background: #9437ff;
+    width: 100%;
+    height: 100vh;
+}
+.login-container form {
+    width: 30%;
+    margin: 0 auto;
+    position: relative;
+    top: 200px;
+    text-align: center;
+}
+.button-l {
+    border: none;
+    background: white;
+    padding: 15px;
+    border-radius: 40px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+.button-a {
+    border: none;
+    background: #9437ff;
+    padding: 15px;
+    border-radius: 40px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+}
+.button-f {
+    border: none;
+    background: #9437ff;
+    padding: 5px;
+    border-radius: 40px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 10px;
+}
+.button-a:hover {
+    background: #F7CA18;
+}
+.button-l:hover {
+    background: #F7CA18;
+    color: #fff;
+}
+.linkback{
+    position: relative;
+    bottom: 55px;
+    left: 20px;
+}
+.seeall{
+    color: #2a2a2a;
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: underline;
+}
+.seeall:hover {
+    color: #9437ff;
+}
+form input[type=text], form input[type=number], form input[type=email], form input[type=password] {
+  border: 0;
+  border-bottom: 3px solid #eee;
+  font-size: 1.7em;
+  margin: 20px 0;
+  padding: 5px;
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+}
+
+form input[type=text]:focus, form input[type=number]:focus,
+form input[type=email]:focus, form input[type=password]:focus {
+  border-bottom: 3px solid #F64747;
+  outline: 0;
+}
+
+.add form input[type=submit], .edit form input[type=submit], 
+.login form input[type=submit], .register form input[type=submit]  {
+  background-color: #F64747;
+  display: block;
+  margin: auto;
+  padding: 10px 30px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add form input[type=submit]:hover, .add form input[type=submit]:focus,
+.edit form input[type=submit]:hover, .edit form input[type=submit]:focus {
+  outline: 0;
+  background-color: #F64747;
 }
