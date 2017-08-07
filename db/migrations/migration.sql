@@ -1,4 +1,4 @@
-\c designer_assistant2
+-- \c designer_assistant2
 
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
